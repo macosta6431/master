@@ -3,6 +3,7 @@ name: Trigger API Autorization
 on:
   schedule:
     - cron: '45 17 * * *'
+  workflow_dispatch:
 
 jobs:
   ejecuta-ruta:
