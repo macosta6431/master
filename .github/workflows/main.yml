@@ -2,7 +2,7 @@ name: Trigger API Autorization
 
 on:
   schedule:
-    - cron: '55 17 * * *'
+    - cron: '17 19 * * *'
   workflow_dispatch:
 
 jobs:
