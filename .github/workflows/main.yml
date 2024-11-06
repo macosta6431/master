@@ -2,7 +2,7 @@ name: Trigger API Autorization
 
 on:
   schedule:
-    - cron: '17 19 * * *'
+    - cron: '22 19 * * *'
   workflow_dispatch:
 
 jobs:
@@ -15,6 +15,14 @@ jobs:
           curl -X POST -m 1 -s -o /dev/null "https://api-sistemacontable.sangregorio.edu.ec/api/v1/usgp/service/externo/cxc_estudiantes_periodo/1313762773/072/g" &
 
   ejecuta-ruta2:
+    #if: github.event.schedule == '55 17 * * *'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger API without waiting
+        run: |
+          curl -X POST -m 1 -s -o /dev/null "https://api-sistemacontable.sangregorio.edu.ec/api/v1/usgp/service/externo/cxc_estudiantes/1313762773" &
+
+  ejecuta-ruta3:
     #if: github.event.schedule == '55 17 * * *'
     runs-on: ubuntu-latest
     steps:
